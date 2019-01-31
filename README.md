@@ -1,4 +1,3 @@
 # DesignPatternsDemo
-This a sample project for MVC, MVP, MVVM
+This a sample project for MVVM
 
-Change branches to see others
