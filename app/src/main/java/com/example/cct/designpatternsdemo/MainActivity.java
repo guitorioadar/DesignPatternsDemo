@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private int userid;
 
     private UserModel gUserModel;
+    private TextView textView2;
+    private EditText etThird;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
         userViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
 
         textView = findViewById(R.id.textView);
+        textView2 = findViewById(R.id.textView2);
         etName = findViewById(R.id.etName);
+        etThird = findViewById(R.id.etThird);
         etEmail = findViewById(R.id.etEmail);
         button = findViewById(R.id.button);
 
@@ -147,6 +151,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        etThird.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                userViewModel.setStringValue(s.toString());
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        userViewModel.getStringValue().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textView2.setText(s);
+            }
+        });
 
     }
 
