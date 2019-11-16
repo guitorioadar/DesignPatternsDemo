@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		Student model = retriveStudetnFromDatabase();
+		Student model = retrieveStudentFromDatabase();
 		MainActivity view = new MainActivity();
 
 		controller = new StudentController(model,view);
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 	}
 
-	private Student retriveStudetnFromDatabase() {
+	private Student retrieveStudentFromDatabase() {
 		Student student = new Student();
 		student.setName("Robert");
 		student.setRollNo("10");
