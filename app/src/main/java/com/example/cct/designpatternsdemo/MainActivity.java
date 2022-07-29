@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 
 		Student model = retrieveStudentFromDatabase();
-		MainActivity view = new MainActivity();
+		MainActivity view = this;
 
 		controller = new StudentController(model,view);
 
